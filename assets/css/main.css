@@ -29,6 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+
 body {
 	line-height: 1;
 }
@@ -2587,64 +2588,71 @@ input, select, textarea {
 		}
 
 /* Image */
+.image {
+  border: 0;
+  display: inline-block;
+  position: relative;
+  text-align: center; /* Center-aligns the caption under the image */
+}
 
-	.image {
-		border: 0;
-		display: inline-block;
-		position: relative;
-	}
+.image img {
+  display: block;
+}
 
-		.image img {
-			display: block;
-		}
+.image.left, .image.right {
+  max-width: 40%;
+}
 
-		.image.left, .image.right {
-			max-width: 40%;
-		}
+.image.left img, .image.right img {
+  width: 100%;
+}
 
-			.image.left img, .image.right img {
-				width: 100%;
-			}
+.image.left {
+  float: left;
+  margin: 0 2rem 2rem 0;
+  top: 0.75rem;
+}
 
-		.image.left {
-			float: left;
-			margin: 0 2rem 2rem 0;
-			top: 0.75rem;
-		}
+.image.right {
+  float: right;
+  margin: 0 0 2rem 2rem;
+  top: 0.75rem;
+}
 
-		.image.right {
-			float: right;
-			margin: 0 0 2rem 2rem;
-			top: 0.75rem;
-		}
+.image.left figcaption, .image.right figcaption {
+  font-size: 14px; /* Caption font size */
+  color: #555; /* Caption text color */
+  margin-top: 8px; /* Adds space between image and caption */
+}
 
-		.image.fit {
-			display: block;
-			margin: 2.5rem 0;
-			width: 100%;
-		}
+.image.fit {
+  display: block;
+  margin: 2.5rem 0;
+  width: 100%;
+}
 
-			.image.fit:first-child {
-				margin-top: 0;
-			}
+.image.fit:first-child {
+  margin-top: 0;
+}
 
-			.image.fit img {
-				width: 100%;
-			}
+.image.fit img {
+  width: 100%;
+}
 
-		.image.main {
-			display: block;
-			margin: 4rem 0;
-			width: 100%;
-		}
+.image.main {
+  display: block;
+  margin: 4rem 0;
+  width: 100%;
+}
 
-			.image.main:first-child {
-				margin-top: 0;
-			}
+.image.main:first-child {
+  margin-top: 0;
+}
 
-			.image.main img {
-				width: 100%;
-			}
+.image.main img {
+  width: 100%;
+}
+
 
 		@media screen and (max-width: 736px) {
 
@@ -4688,30 +4696,42 @@ input, select, textarea {
 
 	}
 
+	.video {
+	  border: 0;
+	  display: inline-block;
+	  position: relative;
+	  text-align: center; /* Centers the caption below the video */
+		margin-bottom: 2rem; /* Adds space between the video and the caption */
+	}
 
-.video {
-    border: 0;
-    display: inline-block;
-    position: relative;
-}
+	.video.left, .video.right {
+	  max-width: 40%;  /* Adjust this based on your layout */
+	}
 
-.video.left {
-    float: left;
-    margin: 0 2rem 2rem 0;
-    top: 0.75rem;
-    max-width: 40%;  /* You can adjust this value */
-}
+	.video.left iframe, .video.right iframe {
+	  width: 100%;  /* Ensure the video fills its container */
+	  height: auto;
+	}
 
-.video.right {
-    float: right;
-    margin: 0 0 2rem 2rem;
-    top: 0.75rem;
-    max-width: 40%;  /* Adjust as needed */
-}
+	.video.left {
+	  float: left;
+	  margin: 0 2rem 2rem 0;
+	  top: 0.75rem;
+	}
 
-#yt-video-left, #yt-video-right {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4/3; /* Ensures 16:9 ratio */
-    max-width: 100%;
-}
+	.video.right {
+	  float: right;
+	  margin: 0 0 2rem 2rem;
+	  top: 0.75rem;
+	}
+
+	.video figcaption {
+	  font-size: 14px;  /* Caption font size */
+	  color: #555;      /* Caption text color */
+	  margin-top: 8px;  /* Adds space between the video and the caption */
+	}
+
+	#yt-video-left, #yt-video-right {
+	  aspect-ratio: 4/3;  /* Maintain a 4:3 aspect ratio for videos */
+	  max-width: 100%;  /* Ensure the video doesn't exceed container width */
+	}
