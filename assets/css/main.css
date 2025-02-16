@@ -29,7 +29,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
-
 body {
 	line-height: 1;
 }
@@ -2588,71 +2587,64 @@ input, select, textarea {
 		}
 
 /* Image */
-.image {
-  border: 0;
-  display: inline-block;
-  position: relative;
-  text-align: center; /* Center-aligns the caption under the image */
-}
 
-.image img {
-  display: block;
-}
+	.image {
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
 
-.image.left, .image.right {
-  max-width: 40%;
-}
+		.image img {
+			display: block;
+		}
 
-.image.left img, .image.right img {
-  width: 100%;
-}
+		.image.left, .image.right {
+			max-width: 40%;
+		}
 
-.image.left {
-  float: left;
-  margin: 0 2rem 2rem 0;
-  top: 0.75rem;
-}
+			.image.left img, .image.right img {
+				width: 100%;
+			}
 
-.image.right {
-  float: right;
-  margin: 0 0 2rem 2rem;
-  top: 0.75rem;
-}
+		.image.left {
+			float: left;
+			margin: 0 2rem 2rem 0;
+			top: 0.75rem;
+		}
 
-.image.left figcaption, .image.right figcaption {
-  font-size: 14px; /* Caption font size */
-  color: #555; /* Caption text color */
-  margin-top: 8px; /* Adds space between image and caption */
-}
+		.image.right {
+			float: right;
+			margin: 0 0 2rem 2rem;
+			top: 0.75rem;
+		}
 
-.image.fit {
-  display: block;
-  margin: 2.5rem 0;
-  width: 100%;
-}
+		.image.fit {
+			display: block;
+			margin: 2.5rem 0;
+			width: 100%;
+		}
 
-.image.fit:first-child {
-  margin-top: 0;
-}
+			.image.fit:first-child {
+				margin-top: 0;
+			}
 
-.image.fit img {
-  width: 100%;
-}
+			.image.fit img {
+				width: 100%;
+			}
 
-.image.main {
-  display: block;
-  margin: 4rem 0;
-  width: 100%;
-}
+		.image.main {
+			display: block;
+			margin: 4rem 0;
+			width: 100%;
+		}
 
-.image.main:first-child {
-  margin-top: 0;
-}
+			.image.main:first-child {
+				margin-top: 0;
+			}
 
-.image.main img {
-  width: 100%;
-}
-
+			.image.main img {
+				width: 100%;
+			}
 
 		@media screen and (max-width: 736px) {
 
@@ -3224,70 +3216,101 @@ input, select, textarea {
 	}
 
 /* Wrapper */
+/* Wrapper (first wrapper) */
+#wrapper {
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
 
-	#wrapper {
-		-moz-transition: opacity 0.5s ease;
-		-webkit-transition: opacity 0.5s ease;
-		-ms-transition: opacity 0.5s ease;
-		transition: opacity 0.5s ease;
-		position: relative;
-		z-index: 1;
-		overflow: hidden;
-	}
+/* Background for the first wrapper */
+#wrapper > .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #212931;
+    background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_nw.png");
+    background-size: auto, auto, 100% auto;
+    background-position: center, center, top center;
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-attachment: scroll, scroll, scroll;
+    z-index: -1;
+}
 
-		#wrapper > .bg {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_nw.png");
-			background-size: auto,								auto,														100% auto;
-			background-position: center,								center,														top center;
-			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
-			z-index: -1;
-		}
+/* Background for the second wrapper (subpage) */
+#wrapper.second-wrapper > .bg {
+    background-image: url("../../images/subpage-bg.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/skitouren_landscape.jpg");
+    background-size: auto, auto, 100% auto;
+    background-position: center, center, top center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-attachment: scroll, scroll, scroll;
+}
 
-			#wrapper > .bg.fixed {
-				position: fixed;
-				width: 100vw;
-				height: 100vh;
-			}
+/* Fade-in effect */
+#wrapper.fade-in, #wrapper.second-wrapper.fade-in {
+    opacity: 1 !important; /* Ensure fade-in effect is applied */
+}
 
-		#wrapper.fade-in:before {
-			pointer-events: none;
-			-moz-transition: opacity 1s ease-in-out;
-			-webkit-transition: opacity 1s ease-in-out;
-			-ms-transition: opacity 1s ease-in-out;
-			transition: opacity 1s ease-in-out;
-			-moz-transition-delay: 0.75s;
-			-webkit-transition-delay: 0.75s;
-			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
-			background: #1e252d;
-			content: '';
-			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0;
-			position: fixed;
-			top: 0;
-			width: 100%;
-		}
+/* Fade-in transition */
+#wrapper.fade-in:before, {
+    pointer-events: none;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    -moz-transition-delay: 0.75s;
+    -webkit-transition-delay: 0.75s;
+    -ms-transition-delay: 0.75s;
+    transition-delay: 0.75s;
+    background: #1e252d;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
-		body.is-preload #wrapper.fade-in:before {
-			opacity: 1;
-		}
+#wrapper.second-wrapper.fade-in:before {
+    pointer-events: none;
+    -moz-transition: opacity 0s ease-in-out;
+    -webkit-transition: opacity 0s ease-in-out;
+    -ms-transition: opacity 0s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    -moz-transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    transition-delay: 0s;
+    background: #263447;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
-		@media screen and (orientation: portrait) {
+/* When the page is preloaded, make the fade-in visible */
+body.is-preload #wrapper.fade-in:before, body.is-preload #wrapper.second-wrapper.fade-in:before {
+    opacity: 1;
+}
 
-			#wrapper > .bg {
-				background-size: auto,								auto,														auto 175%;
-			}
-
-		}
+/* Adjust background size on mobile/portrait orientation */
+@media screen and (orientation: portrait) {
+    #wrapper > .bg, #wrapper.second-wrapper > .bg {
+        background-size: auto, auto, auto 175%;
+    }
+}
 
 /* Intro */
 
@@ -4696,42 +4719,30 @@ input, select, textarea {
 
 	}
 
-	.video {
-	  border: 0;
-	  display: inline-block;
-	  position: relative;
-	  text-align: center; /* Centers the caption below the video */
-		margin-bottom: 2rem; /* Adds space between the video and the caption */
-	}
 
-	.video.left, .video.right {
-	  max-width: 40%;  /* Adjust this based on your layout */
-	}
+.video {
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
 
-	.video.left iframe, .video.right iframe {
-	  width: 100%;  /* Ensure the video fills its container */
-	  height: auto;
-	}
+.video.left {
+    float: left;
+    margin: 0 2rem 2rem 0;
+    top: 0.75rem;
+    max-width: 40%;  /* You can adjust this value */
+}
 
-	.video.left {
-	  float: left;
-	  margin: 0 2rem 2rem 0;
-	  top: 0.75rem;
-	}
+.video.right {
+    float: right;
+    margin: 0 0 2rem 2rem;
+    top: 0.75rem;
+    max-width: 40%;  /* Adjust as needed */
+}
 
-	.video.right {
-	  float: right;
-	  margin: 0 0 2rem 2rem;
-	  top: 0.75rem;
-	}
-
-	.video figcaption {
-	  font-size: 14px;  /* Caption font size */
-	  color: #555;      /* Caption text color */
-	  margin-top: 8px;  /* Adds space between the video and the caption */
-	}
-
-	#yt-video-left, #yt-video-right {
-	  aspect-ratio: 4/3;  /* Maintain a 4:3 aspect ratio for videos */
-	  max-width: 100%;  /* Ensure the video doesn't exceed container width */
-	}
+#yt-video-left, #yt-video-right {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; /* Ensures 16:9 ratio */
+    max-width: 100%;
+}
