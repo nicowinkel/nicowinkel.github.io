@@ -4688,3 +4688,45 @@ input, select, textarea {
 		}
 
 	}
+
+
+.video {
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.video.left {
+    float: left;
+    margin: 0 2rem 2rem 0;
+    top: 0.75rem;
+    max-width: 40%;  /* You can adjust this value */
+}
+
+.video.right {
+    float: right;
+    margin: 0 0 2rem 2rem;
+    top: 0.75rem;
+    max-width: 40%;  /* Adjust as needed */
+}
+
+#yt-video-left, #yt-video-right {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; /* Ensures 16:9 ratio */
+    max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  text-align: center;
+}
