@@ -2835,6 +2835,14 @@ input, select, textarea {
 			font-size: 1rem;
 		}
 
+ul.icons li .label-custom {
+	margin-right: .7rem; /* Adjust as needed */
+    margin-bottom: -.3rem; /* Adjust as needed */
+	vertical-align: bottom;        /* Keeps it aligned with text/icons */
+	display: block;                /* Removes inline baseline spacing */
+}
+
+
 /* List */
 
 	ol {
