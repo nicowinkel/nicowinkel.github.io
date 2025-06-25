@@ -4745,7 +4745,7 @@ figcaption {
   display: inline-block; /* Ensure it's treated like an inline element but allows box styling */
   vertical-align: center; /* Aligns bottom of image with text baseline */
   margin-right: 0.7rem;
-  margin-bottom: -0.1em; /* Nudges the image upward */
+  margin-bottom: -0.11em; /* Nudges the image upward */
 }
 
 @media (max-width: 768px) {
