@@ -2496,7 +2496,7 @@ input, select, textarea {
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23eeeeee' /%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23eeeeee' /%3E%3C/svg%3E");
 	}
 
 		select option {
@@ -2834,6 +2834,14 @@ input, select, textarea {
 			transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 			font-size: 1rem;
 		}
+
+ul.icons li .label-custom {
+	margin-right: .7rem; /* Adjust as needed */
+    margin-bottom: -.3rem; /* Adjust as needed */
+	vertical-align: bottom;        /* Keeps it aligned with text/icons */
+	display: block;                /* Removes inline baseline spacing */
+}
+
 
 /* List */
 
@@ -4729,4 +4737,23 @@ figcaption {
   color: #555;
   margin-top: 8px;
   text-align: center;
+}
+
+.olt-logo {
+  width: 26px;
+  height: 26px;
+  display: inline-block; /* Ensure it's treated like an inline element but allows box styling */
+  vertical-align: center; /* Aligns bottom of image with text baseline */
+  margin-right: 0.7rem;
+  margin-bottom: -0.08rem; /* Nudges the image upward */
+}
+
+@media (max-width: 768px) {
+  .olt-logo {
+		margin-right: 0.7rem;
+		margin-left: 0.5rem;
+		margin-bottom: -0.15em; /* Nudges the image upward */
+    width: 15px;
+    height: 15px;
+  }
 }
